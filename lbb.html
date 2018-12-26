@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>Лабораторна работа</title>
+	<script type="text/javascript">
+	function $() 
+{
+var elements = new Array();
+for (var i = 0; i < arguments.length; i++)
+{var element = arguments[i];
+if (typeof element == 'string')
+element = document.getElementById(element);
+if (arguments.length == 1)
+return element;
+elements.push(element);
+}
+return elements;}
+
+		
+		function numberCounter() {
+			
+			var n1 = parseFloat($('n1').value);
+			var n2 = parseFloat($('n2').value);
+			var n3 = parseFloat($('n3').value);
+
+			min=n1;
+                        sum=n2+n3;
+
+			if (min>n2) {
+			min=n2;
+                        sum=n1+n3;}
+                        if (min>n3) {
+			min=n3;
+                        sum=n1+n2;}
+			
+			
+			$('result').value='Наименьших = ' + min + ', sum Наибольших = ' + sum;
+			
+		}
+	</script>
+</head>
+<body id="b1">
+
+        <h1>Base HTML</h1>
+    <div class="header"><h1>Токарь Анастасия Сергеевна</h1></div>   
+    <div class="navig">
+         <div class="nav" >
+     <a href="lab1.html">
+            Лабараторная №1
+        </a>
+        </div>
+        <div class="nav">
+            <a href="lab2.html">
+               Лабараторная №2  
+            </a>
+           
+        </div>
+        <div class="nav">
+            <a href="lab3.html">
+            Лабараторная №3
+        </a>
+        </div>
+        <div class="nav">
+            <a href="lab4.html">
+            Лабараторная №4
+        </a>
+        </div>
+        <div class="nav"  >
+            <a href="modul.html">
+            КР
+        </a>
+        </div>
+        <div class="nav">
+            <a href="index.html">
+            Лаб.раб JS1
+         </a>
+</div>
+<div class="nav" >
+            <a href="lb1.html">
+            Лаб.раб JS2
+        </a>
+         
+</div>
+<div class="nav" style="background-color: rgba(255,255,255,0);
+    color: white;">
+            
+            Лаб.раб JS3
+         
+</div>
+    </div>
+    <div class="content">
+	<div>
+    <p>Даны три числа. Найти сумму двух наибольших из них.</p>
+  	<form>
+  		<input type="number" name="n1" id="n1" placeholder="Число один">
+  		<input type="number" name="n2" id="n2" placeholder="Число два">
+  		<input type="number" name="n3" id="n3" placeholder="Число три">
+  		<input type="button" name="but" onclick="numberCounter()" value="Нажать">
+  	</form>
+  	<br>
+  	<textarea cols="100" rows="2" id="result"></textarea>
+</div>
+</div>
+</body>
+</html>
